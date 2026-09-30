@@ -27,37 +27,37 @@ export const COPY = {
 
 const ORNAMENTS = [
   {
-    src: "/images/hero/ornament-coil-lime.webp",
+    src: "/images/hero/ornament-coil-lime.webp",    
     left: -122,
     top: 221,
     size: 386,
   },
   {
-    src: "/images/hero/ornament-cylinder-white.webp",
-    left: 1227,
+    src: "/images/hero/ornament-cylinder-lime.svg",
+    left: 1160,
     top: 220,
-    size: 371,
+    size: 350,
   },
   {
-    src: "/images/hero/ornament-pyramid-lime.webp",
+    src: "/images/hero/ornament-pyramid-lime.png",
     left: 1104,
     top: 464,
     size: 188,
   },
   {
-    src: "/images/hero/ornament-coil-white.webp",
-    left: 356,
-    top: 477,
+    src: "/images/hero/ornament-coil-white.svg",
+    left: 230,
+    top: 510,
     size: 175,
   },
-  {
-    src: "/images/hero/ornament-coil-lime-2.webp",
+  {    
+    src: "/images/hero/ornament-coil-lime-2.svg",
     left: 1124,
     top: 672,
     size: 331,
   },
   {
-    src: "/images/hero/ornament-torus-lime.webp",
+    src: "/images/hero/ornament-torus-lime.svg",
     left: 14,
     top: 681,
     size: 343,
