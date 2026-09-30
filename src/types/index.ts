@@ -113,3 +113,6 @@ export interface MockListResult<T> {
 export type MockFactory<T, P extends MockParams = MockParams> = (
   params?: P,
 ) => T[];
+
+export type ChipTone = "glass" | "surface" | "accent";
+export type ChipSize = "sm" | "md";
