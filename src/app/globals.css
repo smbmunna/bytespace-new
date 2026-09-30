@@ -1,0 +1,211 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-heading: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-satoshi), ui-sans-serif, system-ui, sans-serif;
+  --font-logo: var(--font-clash-display), ui-sans-serif, system-ui, sans-serif;
+}
+
+@theme {
+  /* ---------- COLOR PRIMITIVES (Figma fill styles) ---------- */
+  /* Persian Blue */
+  --color-persian-blue-50: #E7F6FF;
+  --color-persian-blue-100: #D3EEFF;
+  --color-persian-blue-200: #B0DDFF;
+  --color-persian-blue-300: #81C5FF;
+  --color-persian-blue-400: #4F9DFF;
+  --color-persian-blue-500: #2872FF;
+  --color-persian-blue-600: #0445FF;
+  --color-persian-blue-700: #0043FF;
+  --color-persian-blue-800: #003BE2;
+  --color-persian-blue-900: #0B36A4;
+  --color-persian-blue-950: #071E5F;
+
+  /* Vulcan */
+  --color-vulcan-50: #F1F4FE;
+  --color-vulcan-100: #E1E7FD;
+  --color-vulcan-200: #BDCCFA;
+  --color-vulcan-300: #83A2F6;
+  --color-vulcan-400: #4172EF;
+  --color-vulcan-500: #1950DE;
+  --color-vulcan-600: #0C39BD;
+  --color-vulcan-700: #0B2D99;
+  --color-vulcan-800: #0D287F;
+  --color-vulcan-900: #112569;
+  --color-vulcan-950: #040819;
+
+  /* Shuttle Gray */
+  --color-shuttle-gray-50: #F5F5F6;
+  --color-shuttle-gray-100: #E5E6E8;
+  --color-shuttle-gray-200: #CED0D3;
+  --color-shuttle-gray-300: #ABAEB5;
+  --color-shuttle-gray-400: #82868E;
+  --color-shuttle-gray-500: #666973;
+  --color-shuttle-gray-600: #585A62;
+  --color-shuttle-gray-700: #4B4C53;
+  --color-shuttle-gray-800: #424348;
+  --color-shuttle-gray-900: #3A3B3F;
+  --color-shuttle-gray-950: #242528;
+
+  /* Electric Lime */
+  --color-electric-lime-50: #FDFFE4;
+  --color-electric-lime-100: #FAFFC5;
+  --color-electric-lime-200: #F2FF92;
+  --color-electric-lime-300: #E4FF54;
+  --color-electric-lime-400: #D4FB20;
+  --color-electric-lime-500: #CBFC01;
+  --color-electric-lime-600: #8CB400;
+  --color-electric-lime-700: #6A8902;
+  --color-electric-lime-800: #546B09;
+  --color-electric-lime-900: #465A0D;
+  --color-electric-lime-950: #243300;
+
+  /* Mindaro */
+  --color-mindaro-50: #FBFEE7;
+  --color-mindaro-100: #F5FBCC;
+  --color-mindaro-200: #E4F68A;
+  --color-mindaro-300: #D6F066;
+  --color-mindaro-400: #C1E338;
+  --color-mindaro-500: #A3C919;
+  --color-mindaro-600: #7FA10F;
+  --color-mindaro-700: #607A11;
+  --color-mindaro-800: #4D6113;
+  --color-mindaro-900: #415215;
+  --color-mindaro-950: #212D06;
+
+  /* Electric Violet (only 3 shades exist in the file) */
+  --color-electric-violet-50: #F5F2FF;
+  --color-electric-violet-600: #7F30F7;
+  --color-electric-violet-950: #300B6A;
+
+  /* Black / Neutral-Black  */
+  --color-black-100: #E7E7E7;
+  --color-black-200: #D1D1D1;
+  --color-black-400: #888888;
+  --color-black-700: #4F4F4F;
+  --color-black-800: #454545;
+  --color-black-950: #000000;
+
+  /* Blue Stone (defined in file, unused on Home) */
+  --color-blue-stone-300: #64E4D0;
+  --color-blue-stone-400: #35CCB9;
+
+  /* ---------- UNSTYLED HEXES USED ON HOME (raw fills, no Figma style) ---------- */
+  --color-surface-alt: #FAFAFA;    /* Course showcase + Testimonials section bg */
+  --color-chip: #F6F6F6;           /* inactive category pill; @60% on card image badges */
+  --color-tab-active: #EDE8FF;     /* active category pill */
+  --color-stat: #711EE3;           /* 12K / 70+ / 16 numerals */
+  --color-placeholder: #B0B0B0;    /* hero subtext + search placeholder */
+  --color-success-bg: #DAFEE9;     /* level badge bg (Beginner) */
+  --color-success: #18CF6D;        /* level badge text */
+
+  /* ---------- SEMANTIC ALIASES (use these in components) ---------- */
+  --color-brand: var(--color-persian-blue-800);        /* hero bg, prices, links  #003BE2 */
+  --color-cta: var(--color-electric-violet-600);       /* Join as Creator, Subscribe #7F30F7 */
+  --color-accent: var(--color-electric-lime-400);      /* ornaments  #D4FB20 */
+  --color-accent-button: var(--color-mindaro-400);     /* hero Search button  #C1E338 */
+  --color-heading: var(--color-black-950);             /* #000000 */
+  --color-body: var(--color-black-700);                /* #4F4F4F  (default text, 62 uses) */
+  --color-label: var(--color-shuttle-gray-950);        /* #242528 */
+  --color-border: var(--color-shuttle-gray-200);       /* #CED0D3 card / divider stroke */
+  --color-border-input: var(--color-black-200);        /* #D1D1D1 footer input, copyright text */
+  --color-surface: var(--color-shuttle-gray-50);       /* #F5F5F6 category card bg */
+  --color-on-dark: var(--color-shuttle-gray-50);       /* #F5F5F6 header text on blue */
+  --color-on-dark-muted: var(--color-shuttle-gray-200);/* #CED0D3 header nav links */
+
+  /* ---------- TYPE SIZES (Style Guide) ---------- */
+  --text-heading-l: 72px;
+  --text-heading-m: 44px;
+  --text-heading-s: 36px;
+  --text-heading-xs: 20px;
+  --text-body-l: 18px;
+  --text-body-m: 16px;
+  --text-body-s: 14px;
+  --text-body-xs: 12px;
+  --text-label-xl: 20px;
+  --text-label-l: 18px;
+  --text-label-m: 16px;
+  --text-label-s: 14px;
+  --text-label-xs: 12px;
+  /* one-offs seen on Home, not in Figma text styles */
+  --text-cta-heading: 52px;
+  --text-metric: 48px;
+  --text-metric-sm: 24px;
+
+  /* ---------- LAYOUT: 1440 page, 12-col grid, 120 margin, 40 gutter ---------- */
+  --container-page: 1440px;
+  --container-content: 1200px;   /* every section's inner width */
+  --container-hero-title: 935px;
+  --container-hero-text: 819px;
+  --container-section-intro: 917px;
+  --container-search: 581px;
+  --container-cta-title: 710px;
+  --container-cta-text: 964px;
+  --spacing-page-margin: 120px;
+  --spacing-gutter: 40px;        /* grid gutter: course grid, category grid, testimonials */
+  --spacing-header: 120px;       /* header height */
+
+  /* ---------- SPACING (4px base; values measured on Home) ---------- */
+  --spacing-section-gap: 72px;   /* heading -> content, row -> row */
+  --spacing-hero-gap: 60px;      /* hero text block -> search bar */
+  --spacing-hero-text-gap: 32px; /* h1 -> subtext */
+  --spacing-card-pad: 16px;      /* course card inner padding */
+  --spacing-testimonial-pad: 24px;
+
+  /* ---------- RADII ---------- */
+  --radius-media: 12px;          /* images inside cards */
+  --radius-card: 24px;           /* cards, buttons, chips, search, tabs */
+  --radius-pill: 100px;          /* footer email input */
+
+    /* ---------- SHADOWS: Figma effect style "B" (unused on Home) ---------- */
+  --shadow-elevated:
+    0 1.85px 3.15px rgb(0 0 0 / 0.017),
+    0 8.15px 6.52px rgb(0 0 0 / 0.027),
+    0 20px 13px rgb(0 0 0 / 0.035),
+    0 38.52px 25.48px rgb(0 0 0 / 0.043),
+    0 64.81px 46.85px rgb(0 0 0 / 0.053),
+    0 100px 80px rgb(0 0 0 / 0.07);
+
+  /* ---------- GRADIENTS ---------- */
+  --gradient-text-fade: linear-gradient(180deg, #FFFFFF, #998A8A); /* direction assumed */
+}
+
+/* ---------- Full Figma text styles as single utilities ---------- */
+@utility type-heading-l  { font-family: var(--font-heading); font-size: var(--text-heading-l);  font-weight: 600; line-height: 1.2; letter-spacing: -0.01em; }
+@utility type-heading-m  { font-family: var(--font-heading); font-size: var(--text-heading-m);  font-weight: 500; line-height: 1.2; letter-spacing: -0.01em; }
+@utility type-heading-s  { font-family: var(--font-heading); font-size: var(--text-heading-s);  font-weight: 500; line-height: 1.2; letter-spacing: -0.01em; }
+@utility type-heading-xs { font-family: var(--font-heading); font-size: var(--text-heading-xs); font-weight: 600; line-height: 1.2; letter-spacing: -0.01em; }
+
+@utility type-body-l  { font-family: var(--font-sans); font-size: var(--text-body-l);  font-weight: 400; line-height: 1.6; }
+@utility type-body-m  { font-family: var(--font-sans); font-size: var(--text-body-m);  font-weight: 400; line-height: 1.6; }
+@utility type-body-s  { font-family: var(--font-sans); font-size: var(--text-body-s);  font-weight: 400; line-height: 1.6; }
+@utility type-body-xs { font-family: var(--font-sans); font-size: var(--text-body-xs); font-weight: 400; line-height: 1.6; }
+
+@utility type-label-xl { font-family: var(--font-sans); font-size: var(--text-label-xl); font-weight: 500; line-height: 1.2; }
+@utility type-label-l  { font-family: var(--font-sans); font-size: var(--text-label-l);  font-weight: 500; line-height: 1.2; }
+@utility type-label-m  { font-family: var(--font-sans); font-size: var(--text-label-m);  font-weight: 500; line-height: 1.2; }
+@utility type-label-s  { font-family: var(--font-sans); font-size: var(--text-label-s);  font-weight: 500; line-height: 1.2; }
+@utility type-label-xs { font-family: var(--font-sans); font-size: var(--text-label-xs); font-weight: 500; line-height: 1.2; }
+
+/* One-offs */
+@utility type-cta-heading { font-family: var(--font-heading); font-size: var(--text-cta-heading); font-weight: 500; line-height: 64px; letter-spacing: -0.01em; }
+@utility type-metric      { font-family: var(--font-heading); font-size: var(--text-metric);      font-weight: 600; line-height: 1.2; letter-spacing: -0.01em; }
+@utility type-metric-sm   { font-family: var(--font-heading); font-size: var(--text-metric-sm);   font-weight: 600; line-height: 32px; letter-spacing: -0.01em; }
+@utility type-logo        { font-family: var(--font-logo);    font-size: 24px; font-weight: 700; line-height: 1; }
+
+/* Centered 1200px content column (== 1440 frame with 120px margins) */
+@utility container-content {
+  width: min(100% - 2rem, var(--container-content));
+  margin-inline: auto;
+}
+
+/* ---------- Base ---------- */
+@layer base {
+  html { -webkit-font-smoothing: antialiased; }
+  body {
+    background: #FFFFFF;
+    color: var(--color-body);
+    font-family: var(--font-sans);
+  }
+  h1, h2, h3, h4 { font-family: var(--font-heading); color: var(--color-heading); }
+}
