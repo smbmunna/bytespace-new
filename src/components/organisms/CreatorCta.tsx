@@ -20,7 +20,7 @@ const ORNAMENTS: readonly OrnamentItem[] = [
   { src: "/images/hero/ornament-pyramid-lime.webp", left: 1078, top: 0, size: 188 },
   { src: "/images/hero/ornament-coil-lime-2.webp", left: 1107, top: 289, size: 331 },
   { src: "/images/hero/ornament-coil-lime.webp", left: -122, top: -162, size: 386 },
-  { src: "/images/hero/ornament-coil-white.webp", left: 180, top: 5, size: 175, mirrored: true },
+  { src: "/images/hero/ornament-coil-white.png", left: 180, top: 5, size: 175, mirrored: true },
   { src: "/images/hero/ornament-cone-white.webp", left: -50, top: 225, size: 188 },
   { src: "/images/hero/ornament-torus-lime.webp", left: 16, top: 298, size: 343 },
   { src: "/images/hero/ornament-cylinder-white.webp", left: 1222, top: 5, size: 371 },
