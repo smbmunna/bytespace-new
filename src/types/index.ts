@@ -135,3 +135,12 @@ export interface OrnamentItem {
  * ---------------------------------------------------------------------- */
 
 export type TestimonialWithAvatar = Testimonial & { avatarUrl: string };
+
+/* -------------------------------------------------------------------------
+ * for courses section
+ * ---------------------------------------------------------------------- */
+
+export interface CategoryTab {
+  id: string; // matches Course.categorySlug (except the "featured" tab)
+  label: string;
+}
