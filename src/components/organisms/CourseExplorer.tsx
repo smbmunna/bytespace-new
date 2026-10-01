@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 import { CourseCard } from "@/src/components/molecules/CourseCard";
 import { CategoryTabs } from "@/src/components/molecules/CategoryTabs";
@@ -21,11 +22,6 @@ export interface CourseExplorerProps {
   className?: string;
 }
 
-/**
- * Course discovery — Figma › Home › Frame 3 + category pills + Frame 8.
- * Intro (917px) → 42px → pill rows → 77px → 3-column grid (373px cards, 40px gaps).
- * Client component: the pills filter the grid ("Featured" shows everything).
- */
 export function CourseExplorer({
   courses = COURSES,
   tabRows = CATEGORY_TAB_ROWS,
@@ -42,9 +38,13 @@ export function CourseExplorer({
   );
 
   return (
-    <section
+    <motion.section
       aria-labelledby="course-explorer-heading"
       className={cn("pt-[72px]", className)}
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
     >
       <div className="container-content flex flex-col items-center">
         <SectionHeading
@@ -53,27 +53,50 @@ export function CourseExplorer({
           description={COPY.description}
         />
 
-        <CategoryTabs
-          className="mt-[42px]"
-          rows={tabRows}
-          activeId={activeId}
-          onSelect={setActiveId}
-        />
+        <div className="mt-[42px] w-full flex justify-center">
+          <CategoryTabs
+            rows={tabRows}
+            activeId={activeId}
+            onSelect={setActiveId}
+          />
+        </div>
 
-        {visible.length > 0 ? (
-          <ul className="mt-[77px] grid w-full grid-cols-1 gap-10 md:grid-cols-2 xl:grid-cols-3">
-            {visible.map((course) => (
-              <li key={course.id}>
-                <CourseCard course={course} />
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <p role="status" className="type-body-l mt-[77px] text-shuttle-gray-400">
-            No courses in this category yet.
-          </p>
-        )}
+        <AnimatePresence mode="wait">
+          {visible.length > 0 ? (
+            <motion.ul
+              key={activeId}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.35, ease: "easeInOut" }}
+              className="mt-[77px] grid w-full grid-cols-1 gap-10 md:grid-cols-2 xl:grid-cols-3"
+            >
+              {visible.map((course, index) => (
+                <motion.li
+                  key={course.id}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.3, delay: index * 0.1 }}
+                  layout
+                >
+                  <CourseCard course={course} />
+                </motion.li>
+              ))}
+            </motion.ul>
+          ) : (
+            <motion.p
+              key="empty"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              role="status"
+              className="type-body-l mt-[77px] text-shuttle-gray-400"
+            >
+              No courses in this category yet.
+            </motion.p>
+          )}
+        </AnimatePresence>
       </div>
-    </section>
+    </motion.section>
   );
 }

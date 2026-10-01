@@ -7,12 +7,7 @@ import { StatItem } from "@/src/components/molecules/StatItem";
 import { FEATURED_COURSE, GROWTH_STATS } from "@/src/data/showcase";
 import { CUTOUT_SHADOW } from "@/src/lib/shadows";
 
-/**
- * Row A — "Your Path to Professional Growth Starts Here!"
- * Figma › Frame 13: text column 574px + 63px gap + 621 × 552 visual (1258px total,
- * so the visual slightly overhangs the 1200px container on the right).
- * Visual z-order: course card < student photo < progress card < lime coil.
- */
+
 export function GrowthShowcaseRow() {
   return (
     <div className="flex flex-col items-center gap-10 xl:flex-row xl:gap-[63px]">
@@ -40,6 +35,7 @@ export function GrowthShowcaseRow() {
           sizes="577px"
           className="absolute top-3 left-0 h-[540px] w-[577px] max-w-none"
           style={{ filter: CUTOUT_SHADOW }}
+          loading="eager"
         />
 
         <ProgressCard
