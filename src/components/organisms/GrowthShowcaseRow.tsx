@@ -40,6 +40,7 @@ export function GrowthShowcaseRow() {
           sizes="577px"
           className="absolute top-3 left-0 h-[540px] w-[577px] max-w-none"
           style={{ filter: CUTOUT_SHADOW }}
+          loading="eager"
         />
 
         <ProgressCard

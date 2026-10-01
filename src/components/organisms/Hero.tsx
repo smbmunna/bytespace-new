@@ -130,6 +130,7 @@ export function Hero({ searchAction = "/courses", className }: HeroProps) {
           sizes="(min-width: 1024px) 578px, 90vw"
           className="h-auto w-full"
           style={{ filter: IMAGE_SHADOW }}
+          loading="eager"
         />
       </div>
 
