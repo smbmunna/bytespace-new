@@ -10,9 +10,9 @@ import type { Course } from "@/src/types";
 /** Figma › Course_Card_1 avatars (same photos as avatar-2 + three extra). */
 const DEFAULT_AVATARS = [
   "/images/avatars/avatar-2.webp",
-  "/images/avatars/avatar-5.webp",
-  "/images/avatars/avatar-6.webp",
-  "/images/avatars/avatar-7.webp",
+  "/images/avatars/avatar-8.webp",
+  "/images/avatars/avatar-9.webp",
+  "/images/avatars/avatar-10.webp",
 ];
 
 export interface CourseCardProps {
@@ -22,8 +22,8 @@ export interface CourseCardProps {
 }
 
 /**
- * Course card — Figma › Course_Card_1: 373px wide, white, 1px #CED0D3 border,
- * 24px radius, 16px padding. Reusable for the course grid.
+ * Course card — Figma › Course_Card_1: 373px wide in the grid, white, 1px #CED0D3 border,
+ * 24px radius, 16px padding. Fills its container; set a width via className when positioning it.
  */
 export function CourseCard({ course, avatars = DEFAULT_AVATARS, className }: CourseCardProps) {
   const {
@@ -44,7 +44,7 @@ export function CourseCard({ course, avatars = DEFAULT_AVATARS, className }: Cou
   return (
     <article
       className={cn(
-        "relative w-[373px] rounded-card border border-border bg-white p-4",
+        "relative w-full rounded-card border border-border bg-white p-4",
         className,
       )}
     >
@@ -65,19 +65,19 @@ export function CourseCard({ course, avatars = DEFAULT_AVATARS, className }: Cou
       </div>
 
       {/* Rating — top-right of the content area */}
-      <p className="type-label-l absolute top-[232px] right-4 flex items-center leading-7 font-medium text-body">
+      <p className="absolute top-[232px] right-4 flex items-center text-label-l leading-7 font-medium text-black-400">
         {rating.toFixed(1)}
         <span className="[&>svg]:size-6">
-          <StarIcon className="text-[#D4750B]" />
+          <StarIcon />
         </span>
       </p>
 
       <div className="mt-[21px] flex flex-col gap-4">
-        <div>
-          <h3 className="font-heading text-heading-xs leading-7 font-semibold text-heading">
+        <div className="max-w-[237px]">
+          <h3 className="truncate font-heading text-heading-xs leading-7 font-semibold text-heading">
             {title}
           </h3>
-          <p className="text-body-xs leading-5 text-body">by {creatorName}</p>
+          <p className="text-body-xs leading-5 text-brand">by {creatorName}</p>
         </div>
 
         <div className="flex items-center gap-3">
@@ -89,12 +89,12 @@ export function CourseCard({ course, avatars = DEFAULT_AVATARS, className }: Cou
             size={32}
             overlap={8}
             overflowLabel={studentCount ? `${studentCount}+` : undefined}
-            overflowClassName="bg-black-950 font-medium text-white"
+            overflowClassName="bg-accent font-medium text-label"
           />
         </div>
 
         <p className="flex items-end">
-          <span className="font-heading text-heading-xs leading-6 font-semibold text-electric-violet-950">
+          <span className="font-heading text-heading-xs leading-6 font-semibold text-brand">
             ${price}
           </span>
           {priceSuffix && <span className="text-body-xs leading-5 text-body">{priceSuffix}</span>}

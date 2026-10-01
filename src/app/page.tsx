@@ -1,3 +1,4 @@
+import { CourseExplorer } from "@/src/components/organisms/CourseExplorer";
 import { FeatureShowcase } from "../components/organisms/FeatureShowcase";
 import { CreatorCta } from "@/src/components/organisms/CreatorCta";
 import { Testimonials } from "@/src/components/organisms/Testimonials";
@@ -7,6 +8,7 @@ export default function Home() {
   return (
     <div>
       <Hero />
+      <CourseExplorer/>
       <FeatureShowcase />
       <CreatorCta />
       <Testimonials/>

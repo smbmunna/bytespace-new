@@ -30,7 +30,7 @@ export function GrowthShowcaseRow() {
       </ShowcaseCopy>
 
       <div className="relative h-[552px] w-[621px] shrink-0 max-md:[zoom:0.55]">
-        <CourseCard course={FEATURED_COURSE} className="absolute top-0 left-0" />
+        <CourseCard course={FEATURED_COURSE} className="absolute top-0 left-0 w-[373px]" />
 
         <Image
           src="/images/hero/hero-student.webp"
