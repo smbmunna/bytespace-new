@@ -144,3 +144,23 @@ export interface CategoryTab {
   id: string; // matches Course.categorySlug (except the "featured" tab)
   label: string;
 }
+/* -------------------------------------------------------------------------
+ * for logo section
+ * ---------------------------------------------------------------------- */
+
+export interface LogoTextProps {
+  children: React.ReactNode;
+}
+
+export type LogoType =
+  | "wave"
+  | "sun"
+  | "bolt"
+  | "dots"
+  | "rings";
+
+export interface BrandLogoData {
+  name: string;
+  type: LogoType;
+}
+
