@@ -33,7 +33,7 @@ const ORNAMENTS = [
     size: 386,
   },
   {
-    src: "/images/hero/ornament-cylinder-lime.svg",
+    src: "/images/hero/ornament-cylinder-lime.png",
     left: 1160,
     top: 220,
     size: 350,
@@ -45,19 +45,19 @@ const ORNAMENTS = [
     size: 188,
   },
   {
-    src: "/images/hero/ornament-coil-white.svg",
+    src: "/images/hero/ornament-coil-white.png",
     left: 230,
     top: 510,
     size: 175,
   },
   {    
-    src: "/images/hero/ornament-coil-lime-2.svg",
+    src: "/images/hero/ornament-coil-lime-2.png",
     left: 1124,
     top: 672,
     size: 331,
   },
   {
-    src: "/images/hero/ornament-torus-lime.svg",
+    src: "/images/hero/ornament-torus-lime.png",
     left: 14,
     top: 681,
     size: 343,

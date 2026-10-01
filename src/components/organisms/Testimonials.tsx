@@ -1,3 +1,7 @@
+"use client";
+
+import { motion } from "framer-motion";
+
 import { GlowBlob, type GlowBlobProps } from "@/src/components/atoms/GlowBlob";
 import { TestimonialCard } from "@/src/components/molecules/TestimonialCard";
 import { TESTIMONIALS } from "@/src/data/testimonials";
@@ -22,7 +26,6 @@ export interface TestimonialsProps {
   className?: string;
 }
 
-
 export function Testimonials({ items = TESTIMONIALS, className }: TestimonialsProps) {
   return (
     <section
@@ -39,16 +42,37 @@ export function Testimonials({ items = TESTIMONIALS, className }: TestimonialsPr
       </div>
 
       <div className="container-content flex flex-col gap-section-gap">
-        <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:gap-[43px]">
+        {/* Header content with fade-in and slide-up */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="flex flex-col gap-6 lg:flex-row lg:items-end lg:gap-[43px]"
+        >
           <h2 id="testimonials-heading" className="type-heading-m lg:w-[577px] lg:shrink-0">
             {COPY.title}
           </h2>
           <p className="type-body-l text-body lg:w-[580px] lg:shrink-0">{COPY.description}</p>
-        </div>
+        </motion.div>
 
+        {/* Testimonial cards grid with staggered entrance animations */}
         <div className="flex flex-col items-stretch gap-6 md:flex-row md:flex-wrap md:items-start md:gap-[41px]">
-          {items.map((testimonial) => (
-            <TestimonialCard key={testimonial.id} testimonial={testimonial} />
+          {items.map((testimonial, index) => (
+            <motion.div
+              key={testimonial.id}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{
+                duration: 0.5,
+                delay: index * 0.1, // Staggers each card appearance slightly
+                ease: "easeOut",
+              }}
+              className="flex-1 min-w-[300px]"
+            >
+              <TestimonialCard testimonial={testimonial} />
+            </motion.div>
           ))}
         </div>
       </div>
