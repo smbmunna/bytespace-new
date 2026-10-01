@@ -164,3 +164,18 @@ export interface BrandLogoData {
   type: LogoType;
 }
 
+/* -------------------------------------------------------------------------
+ * for explore categories section
+ * ---------------------------------------------------------------------- */
+
+export interface ExploreCategory {
+  id: string;
+  name: string;
+  icon: string;
+}
+
+export interface ExploreCategoryCardProps {
+  name: string;
+  icon: string;
+}
+
