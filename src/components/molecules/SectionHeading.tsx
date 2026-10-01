@@ -28,7 +28,7 @@ export function SectionHeading({
 }: SectionHeadingProps) {
   return (
     <div className={cn("flex flex-col items-center gap-4 text-center", className)}>
-      <h2 id={id} className="type-heading-m max-w-[588px] text-vulcan-950">
+      <h2 id={id} className="font-bold text-4xl max-w-[550px] text-vulcan-950">
         {title}
       </h2>
       <p className={cn("type-body-l max-w-section-intro", tones[descriptionTone])}>{description}</p>

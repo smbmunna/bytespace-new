@@ -57,7 +57,7 @@ export function CourseCard({ course, avatars = DEFAULT_AVATARS, className }: Cou
           sizes="341px"
           className="object-cover"
         />
-        <div className="absolute bottom-[13px] left-3 flex gap-3">
+        <div className="absolute bottom-[13px] left-2 flex gap-0.5">
           <Chip>{lessonCount} Lessons</Chip>
           <Chip>{durationLabel}</Chip>
           <Chip>{commentCount} Comments</Chip>
@@ -67,7 +67,7 @@ export function CourseCard({ course, avatars = DEFAULT_AVATARS, className }: Cou
       {/* Rating — top-right of the content area */}
       <p className="absolute top-[232px] right-4 flex items-center text-label-l leading-7 font-medium text-black-400">
         {rating.toFixed(1)}
-        <span className="[&>svg]:size-6">
+        <span className="[&>svg]:size-5">
           <StarIcon />
         </span>
       </p>

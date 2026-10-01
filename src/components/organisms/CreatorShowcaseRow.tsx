@@ -62,7 +62,7 @@ export function CreatorShowcaseRow() {
       </div>
 
       <ShowcaseCopy
-        className="w-full xl:w-[580px] xl:shrink-0"
+        className="w-full xl:w-[500px] xl:shrink-0"
         title="Create & Manage Courses Easily."
         description={
           <>

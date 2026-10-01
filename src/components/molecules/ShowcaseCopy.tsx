@@ -22,7 +22,7 @@ export function ShowcaseCopy({
 }: ShowcaseCopyProps) {
   return (
     <div className={cn("flex flex-col gap-10", className)}>
-      <h2 className="type-heading-m">{title}</h2>
+      <h2 className="font-bold text-4xl">{title}</h2>
       <p className={cn("type-body-l text-body", descriptionClassName)}>{description}</p>
       {children}
     </div>

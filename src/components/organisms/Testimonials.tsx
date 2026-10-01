@@ -50,7 +50,7 @@ export function Testimonials({ items = TESTIMONIALS, className }: TestimonialsPr
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="flex flex-col gap-6 lg:flex-row lg:items-end lg:gap-[43px]"
         >
-          <h2 id="testimonials-heading" className="type-heading-m lg:w-[577px] lg:shrink-0">
+          <h2 id="testimonials-heading" className="font-bold text-4xl lg:w-[577px] lg:shrink-0">
             {COPY.title}
           </h2>
           <p className="type-body-l text-body lg:w-[580px] lg:shrink-0">{COPY.description}</p>
