@@ -188,3 +188,10 @@ export interface ExploreCategoryCardProps {
   icon: string;
 }
 
+/* -------------------------------------------------------------------------
+ * for Footer section
+ * ---------------------------------------------------------------------- */
+
+
+export type FooterLinkItem = { label: string; href: string };
+export type FooterLinkGroup2 = { id: string; title: string; links: FooterLinkItem[] };
