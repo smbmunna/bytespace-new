@@ -1,3 +1,4 @@
+import { LogoCloud } from "@/src/components/organisms/LogoCloud";
 import { CourseExplorer } from "@/src/components/organisms/CourseExplorer";
 import { FeatureShowcase } from "../components/organisms/FeatureShowcase";
 import { CreatorCta } from "@/src/components/organisms/CreatorCta";
@@ -8,10 +9,11 @@ export default function Home() {
   return (
     <div>
       <Hero />
-      <CourseExplorer/>
+      <LogoCloud />
+      <CourseExplorer />
       <FeatureShowcase />
       <CreatorCta />
-      <Testimonials/>
+      <Testimonials />
     </div>
   );
 }
