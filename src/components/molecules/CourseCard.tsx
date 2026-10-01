@@ -10,9 +10,9 @@ import type { Course } from "@/src/types";
 /** Figma › Course_Card_1 avatars (same photos as avatar-2 + three extra). */
 const DEFAULT_AVATARS = [
   "/images/avatars/avatar-2.webp",
-  "/images/avatars/avatar-8.webp",
-  "/images/avatars/avatar-9.webp",
-  "/images/avatars/avatar-10.webp",
+  "/images/avatars/avatar-5.webp",
+  "/images/avatars/avatar-6.webp",
+  "/images/avatars/avatar-7.webp",
 ];
 
 export interface CourseCardProps {
