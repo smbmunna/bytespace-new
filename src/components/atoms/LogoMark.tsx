@@ -1,8 +1,6 @@
-import type { LogoType } from "@/src/data/logos";
+import { LogoMarkProps } from "@/src/types";
 
-interface LogoMarkProps {
-  type: LogoType;
-}
+
 
 export function LogoMark({ type }: LogoMarkProps) {
   if (type === "wave") {

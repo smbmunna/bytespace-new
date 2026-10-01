@@ -164,6 +164,15 @@ export interface BrandLogoData {
   type: LogoType;
 }
 
+export interface BrandLogoProps {
+  logo: BrandLogoData;
+}
+
+export interface LogoMarkProps {
+  type: LogoType;
+}
+
+
 /* -------------------------------------------------------------------------
  * for explore categories section
  * ---------------------------------------------------------------------- */

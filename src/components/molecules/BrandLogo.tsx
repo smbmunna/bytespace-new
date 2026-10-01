@@ -1,11 +1,9 @@
 import { LogoMark } from "@/src/components/atoms/LogoMark";
 import { LogoText } from "@/src/components/atoms/LogoText";
-import { BrandLogoData } from "@/src/types";
+import { BrandLogoProps } from "@/src/types";
 
 
-interface BrandLogoProps {
-  logo: BrandLogoData;
-}
+
 
 export function BrandLogo({ logo }: BrandLogoProps) {
   return (

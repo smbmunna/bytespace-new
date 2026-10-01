@@ -1,6 +1,7 @@
 import { BrandLogoData } from "../types";
 
 
+
 export const logos: BrandLogoData[] = [
   {
     name: "Logoipsum",
