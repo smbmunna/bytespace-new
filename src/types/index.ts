@@ -116,3 +116,16 @@ export type MockFactory<T, P extends MockParams = MockParams> = (
 
 export type ChipTone = "glass" | "surface" | "accent";
 export type ChipSize = "sm" | "md";
+
+/* -------------------------------------------------------------------------
+ * for creators cta section
+ * ---------------------------------------------------------------------- */
+export interface OrnamentItem {
+  src: string;
+  left: number;
+  top: number;
+  /** Square render size in px. */
+  size: number;
+  /** Flip horizontally (Figma: the white coil is mirrored). */
+  mirrored?: boolean;
+}
