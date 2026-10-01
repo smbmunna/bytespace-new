@@ -129,3 +129,9 @@ export interface OrnamentItem {
   /** Flip horizontally (Figma: the white coil is mirrored). */
   mirrored?: boolean;
 }
+
+/* -------------------------------------------------------------------------
+ * for Testimonial section
+ * ---------------------------------------------------------------------- */
+
+export type TestimonialWithAvatar = Testimonial & { avatarUrl: string };

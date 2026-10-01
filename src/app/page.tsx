@@ -1,5 +1,6 @@
 import { FeatureShowcase } from "../components/organisms/FeatureShowcase";
 import { CreatorCta } from "@/src/components/organisms/CreatorCta";
+import { Testimonials } from "@/src/components/organisms/Testimonials";
 import { Hero } from "../components/organisms/Hero";
 
 export default function Home() {
@@ -8,6 +9,7 @@ export default function Home() {
       <Hero />
       <FeatureShowcase />
       <CreatorCta />
+      <Testimonials/>
     </div>
   );
 }
