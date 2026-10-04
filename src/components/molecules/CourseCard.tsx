@@ -18,14 +18,25 @@ const DEFAULT_AVATARS = [
 export interface CourseCardProps {
   course: Course;
   avatars?: readonly string[];
+  /** Color of the rating star (default: inherits the gray rating text). Sign-in/sign-up use "text-accent". */
+  starClassName?: string;
+  /** Classes for the "26+" bubble (default: lime). Sign-in/sign-up use "bg-black-950 font-medium text-white". */
+  overflowClassName?: string;
   className?: string;
 }
 
 /**
  * Course card — Figma › Course_Card_1: 373px wide in the grid, white, 1px #CED0D3 border,
- * 24px radius, 16px padding. Fills its container; set a width via className when positioning it.
+ * 24px radius, 16px padding. It is a block element, so it fills its container in the grid;
+ * set an explicit width via className when absolutely positioning it (e.g. "w-[373px]").
  */
-export function CourseCard({ course, avatars = DEFAULT_AVATARS, className }: CourseCardProps) {
+export function CourseCard({
+  course,
+  avatars = DEFAULT_AVATARS,
+  starClassName,
+  overflowClassName = "bg-accent font-medium text-label",
+  className,
+}: CourseCardProps) {
   const {
     title,
     creatorName,
@@ -44,7 +55,7 @@ export function CourseCard({ course, avatars = DEFAULT_AVATARS, className }: Cou
   return (
     <article
       className={cn(
-        "relative w-full rounded-card border border-border bg-white p-4",
+        "relative rounded-card border border-border bg-white p-4",
         className,
       )}
     >
@@ -68,7 +79,7 @@ export function CourseCard({ course, avatars = DEFAULT_AVATARS, className }: Cou
       <p className="absolute top-[232px] right-4 flex items-center text-label-l leading-7 font-medium text-black-400">
         {rating.toFixed(1)}
         <span className="[&>svg]:size-5">
-          <StarIcon />
+          <StarIcon className={starClassName} />
         </span>
       </p>
 
@@ -89,7 +100,7 @@ export function CourseCard({ course, avatars = DEFAULT_AVATARS, className }: Cou
             size={32}
             overlap={8}
             overflowLabel={studentCount ? `${studentCount}+` : undefined}
-            overflowClassName="bg-accent font-medium text-label"
+            overflowClassName={overflowClassName}
           />
         </div>
 
@@ -97,7 +108,11 @@ export function CourseCard({ course, avatars = DEFAULT_AVATARS, className }: Cou
           <span className="font-heading text-heading-xs leading-6 font-semibold text-brand">
             ${price}
           </span>
-          {priceSuffix && <span className="text-body-xs leading-5 text-body">{priceSuffix}</span>}
+          {priceSuffix && (
+            <span className="text-body-xs leading-5 text-body">
+              {priceSuffix}
+            </span>
+          )}
         </p>
       </div>
     </article>
