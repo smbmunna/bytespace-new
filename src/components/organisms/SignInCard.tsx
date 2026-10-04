@@ -65,7 +65,7 @@ export function SignInCard({ createAccountHref = "/join", className }: SignInCar
       <div className="flex flex-col gap-10">
         <div>
           <p className="type-label-l text-brand">Sign In</p>
-          <h1 id="sign-in-heading" className="type-heading-m text-label max-sm:text-heading-s!">
+          <h1 id="sign-in-heading" className="font-semibold text-4xl text-label max-sm:text-heading-s!">
             Welcome Back
           </h1>
         </div>
