@@ -191,7 +191,22 @@ export interface ExploreCategoryCardProps {
 /* -------------------------------------------------------------------------
  * for Footer section
  * ---------------------------------------------------------------------- */
-
-
 export type FooterLinkItem = { label: string; href: string };
 export type FooterLinkGroup2 = { id: string; title: string; links: FooterLinkItem[] };
+
+/* -------------------------------------------------------------------------
+ * for Footer section
+ * ---------------------------------------------------------------------- */
+export type SocialProvider = "facebook" | "google";
+
+export interface SignInValues {
+  email: string;
+  password: string;
+}
+
+export interface SignUpValues {
+  name: string;
+  email: string;
+  password: string;
+}
+
